@@ -1,0 +1,150 @@
+name: life_drop
+description: "A new Flutter project."
+
+publish_to: 'none' 
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  #language
+  flutter_localizations:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+  #Core
+  connectivity_plus: ^5.0.2
+  flutter_dotenv: ^5.1.0
+  flutter_screenutil: ^5.9.0
+  flutter_native_splash: ^2.3.10
+  get_it: ^7.6.7
+
+  #google signin
+  google_sign_in: ^6.2.1
+
+  #isloading
+  modal_progress_hud_nsn: ^0.5.1
+
+
+  # UI Animation
+  animate_do: ^3.3.4
+  fluttertoast: ^8.2.4
+  flutter_zoom_drawer: ^3.2.0
+  shimmer: ^3.0.0
+  cached_network_image: ^3.3.1
+  flutter_svg: ^2.0.9
+  flutter_animate: ^4.5.0
+  webview_flutter: ^4.7.0
+  package_info_plus: ^7.0.0
+  badges: ^3.1.2
+  
+  # Bloc
+  flutter_bloc: ^8.1.4
+  #shared preferences
+  shared_preferences: ^2.2.2
+  #freezed
+  freezed_annotation: ^2.4.1
+
+  #Firebase
+  firebase_core: ^2.25.5
+  firebase_auth: ^4.17.6
+  cloud_firestore: ^4.17.0
+
+  #image picker
+  image_picker: ^1.0.7
+  permission_handler: ^11.3.1
+
+  #Api
+  dio: ^5.4.2
+  pretty_dio_logger: ^1.3.1
+  retrofit: ^4.1.0
+
+  #Notifications
+  firebase_messaging: ^14.8.0
+  intl: 0.20.2
+
+  #local database Hive 
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
+  #Patination
+  flutter_local_notifications: ^17.1.0
+    
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  very_good_analysis: ^5.1.0
+  flutter_launcher_icons: ^0.13.1
+  flutter_lints: ^2.0.0
+  #dart run build_runner build --delete-conflicting-outputs
+  build_runner: ^2.4.8
+  hive_generator: ^2.0.1
+  freezed: ^2.4.7
+  retrofit_generator: ^8.1.0
+  json_serializable: ^6.7.1
+
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/icons/logo.png"
+  adaptive_icon_background: "#C11428"
+  adaptive_icon_foreground: "assets/icons/logo.png"
+
+
+flutter:
+
+  uses-material-design: true
+
+  
+  assets:
+    - .env.dev
+    - .env.prod
+    - lang/ar.json
+    - lang/en.json
+    - assets/images/core/no_network.jpg
+    - assets/images/core/page_under_build.jpg
+    - assets/images/doner/blood.jpg
+    - assets/images/doner/bloodphoto.jpg
+    - assets/images/doner/google photo.png
+    - assets/images/admin/heart.png
+    - assets/images/admin/products_drawer.png
+    - assets/images/admin/categories_drawer.png
+    - assets/images/admin/empty_screen.png
+    - assets/images/doner/user.png
+    - assets/images/admin/donation.png
+    - assets/images/admin/drop_of_blood.png
+    - assets/images/admin/users_drawer.png
+    - assets/images/doner/big_nav_bar_dark.png
+    - assets/images/doner/big_nav_bar_light.png
+    - assets/images/doner/home_bg_dark.png
+    - assets/images/doner/home_bg_light.png
+    - assets/images/admin/Logo-removebg-preview 1.png
+    - assets/svg/
+
+  fonts:
+  # Arabic Font
+    - family: Cairo
+      fonts:
+        - asset: assets/fonts/arabic/cairo/Cairo-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/arabic/cairo/Cairo-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/arabic/cairo/Cairo-Regular.ttf
+          weight: 400
+    # English Font
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/english/poppins/Poppins-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/english/poppins/Poppins-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/english/poppins/Poppins-Regular.ttf
+          weight: 400
+    # Pacifico Font
+    - family: Pacifico
+      fonts:
+        - asset: assets/fonts/Pacifico/Pacifico-Regular.ttf

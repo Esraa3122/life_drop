@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "818723851680",
+    "project_id": "life-drop-75282",
+    "storage_bucket": "life-drop-75282.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:818723851680:android:5d0811a8097525741fa8c5",
+        "android_client_info": {
+          "package_name": "com.example.life_drop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5v3SEvRC-mDNYzb2w-lXWP385DgdpHA4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
