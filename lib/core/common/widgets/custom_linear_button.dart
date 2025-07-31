@@ -24,7 +24,7 @@ class CustomLinearButton extends StatelessWidget {
       borderRadius: BorderRadius.circular(8.r),
       child: Container(
         height: height ?? 44.h,
-        width: width ?? double.infinity,
+        width: width ?? 44.w,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [

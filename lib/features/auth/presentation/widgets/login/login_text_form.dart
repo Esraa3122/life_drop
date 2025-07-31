@@ -20,10 +20,12 @@ class _LoginTextFormState extends State<LoginTextForm> {
   late AuthBloc _bloc;
 
   @override
-  void initState() {
-    super.initState();
-    _bloc = context.read<AuthBloc>();
-  }
+@override
+void didChangeDependencies() {
+  super.didChangeDependencies();
+  _bloc = context.read<AuthBloc>();
+}
+
 
   @override
   void dispose() {

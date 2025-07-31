@@ -122,7 +122,6 @@ class _CreateNewDonorBottomSheetState extends State<CreateNewDonorBottomSheet> {
             // Phone for Donor TextForm
             CustomTextField(
               controller: phoneController,
-              keyboardType: TextInputType.number,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please Selected The Donor Phone ';
@@ -145,7 +144,6 @@ class _CreateNewDonorBottomSheetState extends State<CreateNewDonorBottomSheet> {
             // Governorate for Donor TextForm
             CustomTextField(
               controller: governorateController,
-              keyboardType: TextInputType.number,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please Selected The Donor Governorate ';
@@ -168,7 +166,6 @@ class _CreateNewDonorBottomSheetState extends State<CreateNewDonorBottomSheet> {
             // City for Donor TextForm
             CustomTextField(
               controller: cityController,
-              keyboardType: TextInputType.number,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please Selected The Donor City ';
@@ -191,7 +188,6 @@ class _CreateNewDonorBottomSheetState extends State<CreateNewDonorBottomSheet> {
             // Blood_Type for Donor TextForm
             CustomTextField(
               controller: bloodTypeController,
-              keyboardType: TextInputType.number,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please Selected The Donor Blood Type ';
@@ -214,7 +210,6 @@ class _CreateNewDonorBottomSheetState extends State<CreateNewDonorBottomSheet> {
             // Latest_Donation for Donor TextForm
             CustomTextField(
               controller: latestDonationController,
-              keyboardType: TextInputType.number,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please Selected The Donor Latest Donation';
@@ -237,7 +232,6 @@ class _CreateNewDonorBottomSheetState extends State<CreateNewDonorBottomSheet> {
             // Condition for Donor TextForm
             CustomTextField(
               controller: conditionController,
-              keyboardType: TextInputType.number,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Please Selected The Donor Condition ';

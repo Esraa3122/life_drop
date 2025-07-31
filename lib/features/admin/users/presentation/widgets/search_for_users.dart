@@ -12,9 +12,17 @@ class SearchForUsers extends StatefulWidget {
 }
 
 class _SearchForUsersState extends State<SearchForUsers> {
+  late TextEditingController searchController;
+
+  @override
+  void initState() {
+    super.initState();
+    searchController = context.read<GetAllUsersBloc>().searchController;
+  }
+
   @override
   void dispose() {
-    context.read<GetAllUsersBloc>().searchController.dispose();
+    searchController.dispose(); // ✅ استخدمي المتغير المحلي بدل context.read
     super.dispose();
   }
 
@@ -24,7 +32,7 @@ class _SearchForUsersState extends State<SearchForUsers> {
       builder: (context, state) {
         final bloc = context.read<GetAllUsersBloc>();
         return CustomTextField(
-          controller: bloc.searchController,
+          controller: searchController,
           keyboardType: TextInputType.emailAddress,
           hintText: 'Search for users',
           onChanged: (value) {
@@ -33,10 +41,10 @@ class _SearchForUsersState extends State<SearchForUsers> {
           },
           suffixIcon: IconButton(
             onPressed: () {
-              bloc.searchController.clear();
+              searchController.clear();
               bloc.add(GetAllUsersEvent.getAllUsers(isNotLoading: true));
             },
-            icon: bloc.searchController.text.isEmpty
+            icon: searchController.text.isEmpty
                 ? const SizedBox.shrink()
                 : const Icon(
                     Icons.clear,
