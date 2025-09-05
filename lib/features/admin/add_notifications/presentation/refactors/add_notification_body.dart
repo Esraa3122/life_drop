@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:life_drop/core/common/loading/empty_screen.dart';
+import 'package:life_drop/core/extensions/context_extension.dart';
 import 'package:life_drop/features/admin/add_notifications/presentation/bloc/get_all_notification_admin/get_all_notification_admin_bloc.dart';
 import 'package:life_drop/features/admin/add_notifications/presentation/widgets/add_notification_item.dart';
 import 'package:life_drop/features/admin/add_notifications/presentation/widgets/create/create_notification.dart';
@@ -32,9 +33,9 @@ class AddNotificationBody extends StatelessWidget {
                   builder: (context, state) {
                     return state.when(
                       loading: () {
-                        return const Center(
+                        return Center(
                           child: CircularProgressIndicator(
-                            color: Colors.black,
+                            color:  context.color.textColor,
                           ),
                         );
                       },

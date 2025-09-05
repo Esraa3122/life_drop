@@ -23,6 +23,9 @@ class AppImages {
   static const String products_drawer =
       'assets/images/admin/products_drawer.png';
   static const String emptyScreen = 'assets/images/admin/empty_screen.png';
+  static const String logo = 'assets/images/core/logo.png';
+  static const String loader = 'assets/images/core/loader.png';
+  static const String abouutUs = 'assets/images/doner/photo_2024-02-25_02-51-03.jpg';
   //Svg
   static const search = 'assets/svg/search.svg';
   static const homeTab = 'assets/svg/home_tab_icon.svg';

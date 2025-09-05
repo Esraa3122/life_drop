@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:life_drop/core/common/widgets/custom_text_field.dart';
-import 'package:life_drop/core/style/colors/colors_light.dart';
+import 'package:life_drop/core/extensions/context_extension.dart';
 import 'package:life_drop/features/admin/users/presentation/bloc/get_all_users/get_all_users_bloc.dart';
 
 class SearchForUsers extends StatefulWidget {
@@ -22,7 +22,7 @@ class _SearchForUsersState extends State<SearchForUsers> {
 
   @override
   void dispose() {
-    searchController.dispose(); // ✅ استخدمي المتغير المحلي بدل context.read
+    searchController.dispose();
     super.dispose();
   }
 
@@ -46,9 +46,9 @@ class _SearchForUsersState extends State<SearchForUsers> {
             },
             icon: searchController.text.isEmpty
                 ? const SizedBox.shrink()
-                : const Icon(
+                : Icon(
                     Icons.clear,
-                    color: ColorsLight.pinkLight,
+                    color: context.color.bluePinkLight,
                   ),
           ),
         );

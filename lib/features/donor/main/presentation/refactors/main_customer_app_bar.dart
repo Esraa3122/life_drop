@@ -24,6 +24,8 @@ class MainDonorAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       automaticallyImplyLeading: false,
       backgroundColor: context.color.mainColor,
+      scrolledUnderElevation: 0,
+      surfaceTintColor: Colors.transparent,
       elevation: 0,
       title: BlocBuilder(
         bloc: cubit,

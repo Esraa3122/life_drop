@@ -4,7 +4,6 @@ import 'package:life_drop/core/common/widgets/custom_container_linear_admin.dart
 import 'package:life_drop/core/common/widgets/text_app.dart';
 import 'package:life_drop/core/extensions/context_extension.dart';
 import 'package:life_drop/core/extensions/date_extension.dart';
-import 'package:life_drop/core/style/colors/colors_light.dart';
 import 'package:life_drop/core/style/fonts/font_family_helper.dart';
 import 'package:life_drop/core/style/fonts/font_weight_helper.dart';
 import 'package:life_drop/features/admin/add_donors/data/models/add_donor_model.dart';
@@ -117,7 +116,7 @@ class DonorInfo extends StatelessWidget {
           text: title,
           theme: context.textStyle.copyWith(
             fontSize: 14.sp,
-            color: Colors.black,
+            color:  context.color.textColor,
             fontFamily: FontFamilyHelper.poppinsEnglish,
             fontWeight: FontWeightHelper.medium,
           ),
@@ -128,7 +127,7 @@ class DonorInfo extends StatelessWidget {
             text: body,
             theme: context.textStyle.copyWith(
               fontSize: 14.sp,
-              color: ColorsLight.pinkDark,
+              color:  context.color.bluePinkDark,
               fontFamily: FontFamilyHelper.poppinsEnglish,
               fontWeight: FontWeightHelper.medium,
             ),

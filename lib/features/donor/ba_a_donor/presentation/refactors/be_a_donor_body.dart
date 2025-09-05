@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:life_drop/features/donor/ba_a_donor/presentation/widgets/button_donation.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:life_drop/features/admin/add_donors/presentation/bloc/add_donor/add_donor_bloc.dart';
 import 'package:life_drop/features/donor/ba_a_donor/presentation/widgets/containar_donation.dart';
 
-
 class BeADonorBody extends StatelessWidget {
-  const BeADonorBody({super.key});
-
+ const BeADonorBody({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,20 +15,20 @@ class BeADonorBody extends StatelessWidget {
         ListView(
           shrinkWrap: true,
           children: [
-            Column(
-              children: [
-            SizedBox(height: 20,),
-            ContainarDonation(
-            ),
-            SizedBox(height: 15,),
-            ButtonDonation(),
-              ],
+            BlocProvider(
+              create: (_) => AddDonorBloc(),
+              child: Column(
+                children: [
+                  const SizedBox(height: 20),
+                  ContainarDonation(),
+                  const SizedBox(height: 20),
+                ],
+              ),
             ),
           ],
         ),
-      
       ],
     );
   }
-  
 }
+

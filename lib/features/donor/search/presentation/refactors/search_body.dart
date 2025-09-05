@@ -14,48 +14,100 @@ class SearchBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 20.h),
-      child: Column(
+      child: ListView(
         children: [
           // filter buttons
-          FilterButtons(),
+          const FilterButtons(),
+          SizedBox(
+            height: 20.h,
+          ),
 
           BlocBuilder<SearchBloc, SearchState>(
             builder: (context, state) {
               return state.when(
-                  loading: () {
-                    return Expanded(
-                      child: Center(
-                        child: CircularProgressIndicator(
+                  loading: () => Expanded(
+                        child: Center(
+                            child: CircularProgressIndicator(
                           color: context.color.textColor,
+                        )),
+                      ),
+                  success: (donorNewList) => Expanded(
+                        child: ListView.separated(
+                          itemBuilder: (context, index) {
+                            return DonorsItem(
+                              donorModel: donorNewList[index],
+                              index: index,
+                            );
+                          },
+                          separatorBuilder: (context, index) =>
+                              SizedBox(height: 15.h),
+                          itemCount: donorNewList.length,
+                          shrinkWrap: true,
+                          physics: const NeverScrollableScrollPhysics(),
                         ),
                       ),
-                    );
-                  },
-                  success: (donorNewList) {
-                    return ListView.separated(
-                      itemBuilder: (context, index) {
-                        return DonorsItem(
-                          donorModel: donorNewList[index],
-                          index: index,
-                        );
-                      },
-                      separatorBuilder: (context, index) => SizedBox(
-                        height: 15.h,
-                      ),
-                      itemCount: donorNewList.length,
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                    );
-                  },
                   empty: EmptyScreen.new,
                   error: Text.new,
                   initial: () {
                     return SizedBox.shrink();
                   });
             },
-          )
+          ),
         ],
       ),
     );
   }
 }
+
+// class SearchBody extends StatelessWidget {
+//   const SearchBody({super.key});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Padding(
+//       padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 20.h),
+//       child: Column(
+//         children: [
+//           // filter buttons
+//           FilterButtons(),
+
+//           BlocBuilder<SearchBloc, SearchState>(
+//             builder: (context, state) {
+//               return state.when(
+//                   loading: () {
+//                     return Expanded(
+//                       child: Center(
+//                         child: CircularProgressIndicator(
+//                           color: context.color.textColor,
+//                         ),
+//                       ),
+//                     );
+//                   },
+//                   success: (donorNewList) {
+//                     return ListView.separated(
+//                       itemBuilder: (context, index) {
+//                         return DonorsItem(
+//                           donorModel: donorNewList[index],
+//                           index: index,
+//                         );
+//                       },
+//                       separatorBuilder: (context, index) => SizedBox(
+//                         height: 15.h,
+//                       ),
+//                       itemCount: donorNewList.length,
+//                       shrinkWrap: true,
+//                       physics: const NeverScrollableScrollPhysics(),
+//                     );
+//                   },
+//                   empty: EmptyScreen.new,
+//                   error: Text.new,
+//                   initial: () {
+//                     return SizedBox.shrink();
+//                   });
+//             },
+//           )
+//         ],
+//       ),
+//     );
+//   }
+// }

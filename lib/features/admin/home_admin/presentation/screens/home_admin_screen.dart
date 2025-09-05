@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:life_drop/core/common/widgets/admin_app_bar.dart';
+import 'package:life_drop/core/extensions/context_extension.dart';
 import 'package:life_drop/core/style/colors/colors_light.dart';
 import 'package:life_drop/core/style/images/app_images.dart';
 import 'package:life_drop/core/utils/admin_drawer_list.dart';
@@ -34,7 +35,7 @@ class _HomeAdminScreenState extends State<HomeAdminScreen> {
       borderRadius: 24,
       showShadow: true,
       drawerShadowsBackgroundColor: ColorsLight.black.withOpacity(0.6),
-      menuBackgroundColor: ColorsLight.pinkDark,
+      menuBackgroundColor: context.color.bluePinkDark!,
     );
   }
 }
@@ -46,10 +47,10 @@ class MenuAdminScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorsLight.pinkDark,
+      backgroundColor: context.color.bluePinkDark!,
       appBar: AdminAppBar(
         isMain: false,
-        backgroundColor: ColorsLight.pinkDark,
+        backgroundColor: context.color.bluePinkDark!,
         title: 'Life Drop',
       ),
       body: Column(
@@ -67,7 +68,7 @@ class MenuAdminScreen extends StatelessWidget {
                 )
                 .toList(),
           ),
-          Expanded(child: Image.asset(AppImages.homeAdminLogo))
+          Expanded(child: Image.asset(AppImages.loader))
         ],
       ),
     );

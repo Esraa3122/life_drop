@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:life_drop/core/common/widgets/admin_app_bar.dart';
 import 'package:life_drop/core/di/injection_container.dart';
-import 'package:life_drop/core/style/colors/colors_light.dart';
+import 'package:life_drop/core/extensions/context_extension.dart';
 import 'package:life_drop/features/admin/add_donors/presentation/bloc/add_donor/add_donor_bloc.dart';
 import 'package:life_drop/features/admin/add_donors/presentation/bloc/get_all_donor/get_all_donor_bloc.dart';
 import 'package:life_drop/features/admin/add_donors/presentation/refactors/add_donor_body.dart';
@@ -22,11 +22,11 @@ class AddDonorScreen extends StatelessWidget {
         BlocProvider(create: (context) => sl <AddDonorBloc>()),
         ],
       child: Scaffold(
-        backgroundColor: ColorsLight.mainColor,
+        backgroundColor:  context.color.mainColor,
         appBar: AdminAppBar(
           title: 'Donor',
           isMain: true,
-          backgroundColor: ColorsLight.mainColor,
+          backgroundColor:  context.color.mainColor!,
         ),
         body: AddDonorBody(),
       ),

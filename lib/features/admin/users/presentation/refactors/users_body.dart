@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:life_drop/core/common/loading/empty_screen.dart';
+import 'package:life_drop/core/extensions/context_extension.dart';
 import 'package:life_drop/features/admin/users/presentation/bloc/get_all_users/get_all_users_bloc.dart';
 import 'package:life_drop/features/admin/users/presentation/widgets/search_for_users.dart';
 import 'package:life_drop/features/admin/users/presentation/widgets/table_for_users.dart';
@@ -34,9 +35,9 @@ class UsersBody extends StatelessWidget {
                       builder: (context, state) {
                         return state.when(
                           loading: () {
-                            return const Center(
+                            return Center(
                                 child: CircularProgressIndicator(
-                              color: Colors.white,
+                              color: context.color.textColor,
                             ));
                           },
                           search: (searchUserList) {

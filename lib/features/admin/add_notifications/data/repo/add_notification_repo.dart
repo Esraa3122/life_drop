@@ -11,12 +11,12 @@ class AddNotificationRepo {
   Future<ApiResult<void>> sendNotifications({
     required String title,
     required String body,
-    required int productId,
+    required int donorId,
   }) async {
     try {
       final response = await _dataSource.sendNotifications(
         body: body,
-        donorId: productId,
+        donorId: donorId,
         title: title,
       );
       return ApiResult.success(response);
@@ -30,12 +30,12 @@ class AddNotificationRepo {
   Future<void> addNotificationsToAllUsersFirebase({
     required String body,
     required String title,
-    required int productId,
+    required int donorId,
   }) async {
     await _dataSource.addNotificationsToAllUsersFirebase(
       body: body,
       title: title,
-      donorId: productId,
+      donorId: donorId,
     );
   }
 }

@@ -72,6 +72,9 @@ class _$UsersNumberEventCopyWithImpl<$Res, $Val extends UsersNumberEvent>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of UsersNumberEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -88,6 +91,9 @@ class __$$StartedImplCopyWithImpl<$Res>
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of UsersNumberEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -190,6 +196,9 @@ class __$$GetUsersNumberEventImplCopyWithImpl<$Res>
   __$$GetUsersNumberEventImplCopyWithImpl(_$GetUsersNumberEventImpl _value,
       $Res Function(_$GetUsersNumberEventImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of UsersNumberEvent
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -343,6 +352,9 @@ class _$UsersNumberStateCopyWithImpl<$Res, $Val extends UsersNumberState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  /// Create a copy of UsersNumberState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -359,6 +371,9 @@ class __$$LoadinStateImplCopyWithImpl<$Res>
   __$$LoadinStateImplCopyWithImpl(
       _$LoadinStateImpl _value, $Res Function(_$LoadinStateImpl) _then)
       : super(_value, _then);
+
+  /// Create a copy of UsersNumberState
+  /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
@@ -470,6 +485,8 @@ class __$$SuccessStateImplCopyWithImpl<$Res>
       _$SuccessStateImpl _value, $Res Function(_$SuccessStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UsersNumberState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -508,7 +525,9 @@ class _$SuccessStateImpl implements SuccessState {
   @override
   int get hashCode => Object.hash(runtimeType, numbers);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UsersNumberState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$SuccessStateImplCopyWith<_$SuccessStateImpl> get copyWith =>
@@ -588,7 +607,10 @@ abstract class SuccessState implements UsersNumberState {
       _$SuccessStateImpl;
 
   String get numbers;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of UsersNumberState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SuccessStateImplCopyWith<_$SuccessStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -610,6 +632,8 @@ class __$$ErrorStateImplCopyWithImpl<$Res>
       _$ErrorStateImpl _value, $Res Function(_$ErrorStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of UsersNumberState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -648,7 +672,9 @@ class _$ErrorStateImpl implements ErrorState {
   @override
   int get hashCode => Object.hash(runtimeType, error);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of UsersNumberState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$ErrorStateImplCopyWith<_$ErrorStateImpl> get copyWith =>
@@ -727,7 +753,10 @@ abstract class ErrorState implements UsersNumberState {
   const factory ErrorState({required final String error}) = _$ErrorStateImpl;
 
   String get error;
-  @JsonKey(ignore: true)
+
+  /// Create a copy of UsersNumberState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorStateImplCopyWith<_$ErrorStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

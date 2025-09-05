@@ -6,7 +6,6 @@ import 'package:life_drop/core/common/widgets/custom_button.dart';
 import 'package:life_drop/core/common/widgets/text_app.dart';
 import 'package:life_drop/core/di/injection_container.dart';
 import 'package:life_drop/core/extensions/context_extension.dart';
-import 'package:life_drop/core/style/colors/colors_light.dart';
 import 'package:life_drop/core/style/fonts/font_family_helper.dart';
 import 'package:life_drop/core/style/fonts/font_weight_helper.dart';
 import 'package:life_drop/features/admin/add_donors/presentation/bloc/add_donor/add_donor_bloc.dart';
@@ -47,7 +46,7 @@ class CreateDonor extends StatelessWidget {
               },
             );
           },
-          backgroundColor: ColorsLight.pinkDark,
+          backgroundColor:  context.color.bluePinkDark,
           lastRadius: 10,
           threeRadius: 10,
           text: 'Add',

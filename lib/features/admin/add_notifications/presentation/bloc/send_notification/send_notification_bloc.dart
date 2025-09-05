@@ -23,14 +23,14 @@ class SendNotificationBloc extends Bloc<SendNotificationEvent, SendNotificationS
     final result = await _repo.sendNotifications(
       title: event.title,
       body: event.body,
-      productId: event.donorId,
+      donorId: event.donorId,
     );
 
     await result.when(
       success: (_) async {
         await _repo.addNotificationsToAllUsersFirebase(
           body: event.body,
-          productId: event.donorId,
+          donorId: event.donorId,
           title: event.title,
         );
         emit(const SendNotificationState.success());

@@ -128,6 +128,9 @@ flutter:
     - assets/images/doner/home_bg_light.png
     - assets/images/admin/Logo-removebg-preview 1.png
     - assets/svg/
+    - assets/images/core/loader.png
+    - assets/images/core/logo.png
+    - assets/images/doner/photo_2024-02-25_02-51-03.jpg
 
   fonts:
   # Arabic Font

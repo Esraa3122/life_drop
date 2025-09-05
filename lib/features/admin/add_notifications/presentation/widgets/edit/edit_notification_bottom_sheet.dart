@@ -140,7 +140,7 @@ class _EditNotificationBottomSheetState
               backgroundColor: ColorsLight.white,
               lastRadius: 20,
               threeRadius: 20,
-              textColor: ColorsLight.pinkDark,
+              textColor:  context.color.bluePinkDark,
               text: 'Edit a Notification',
               width: MediaQuery.of(context).size.width,
               height: 50.h,

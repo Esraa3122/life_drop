@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:life_drop/core/common/widgets/text_app.dart';
 import 'package:life_drop/core/extensions/context_extension.dart';
-import 'package:life_drop/core/style/colors/colors_light.dart';
 import 'package:life_drop/core/style/fonts/font_family_helper.dart';
 import 'package:life_drop/core/style/fonts/font_weight_helper.dart';
 
@@ -25,8 +24,7 @@ class CustomCreateDropDown extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
       decoration: BoxDecoration(
         border: Border.all(
-          color: ColorsLight.pinkLight,
-          width: 2,
+          color: context.color.bluePinkLight!,
         ),
         borderRadius: BorderRadius.circular(12),
       ),
@@ -34,7 +32,7 @@ class CustomCreateDropDown extends StatelessWidget {
         child: DropdownButton<String>(
           iconSize: 30,
           borderRadius: BorderRadius.circular(12),
-          dropdownColor: ColorsLight.pinkDark,
+          dropdownColor: context.color.mainColor,
           style: TextStyle(
             color: Colors.white,
             fontSize: 14.sp,
@@ -42,9 +40,9 @@ class CustomCreateDropDown extends StatelessWidget {
             fontFamily: FontFamilyHelper.poppinsEnglish,
           ),
           elevation: 16,
-          icon: const Icon(
+          icon: Icon(
             Icons.expand_more,
-            color: Colors.black,
+            color: context.color.textColor,
           ),
           onChanged: onChanged,
           value: items.isNotEmpty ? value : null,

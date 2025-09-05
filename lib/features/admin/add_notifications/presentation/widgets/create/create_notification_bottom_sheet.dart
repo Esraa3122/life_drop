@@ -153,9 +153,9 @@ class _CreateNotificationBottomSheetState
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      child: const Center(
+                      child: Center(
                         child: CircularProgressIndicator(
-                          color: ColorsLight.pinkDark,
+                          color:  context.color.bluePinkDark,
                         ),
                       ),
                     );
@@ -168,7 +168,7 @@ class _CreateNotificationBottomSheetState
                       backgroundColor: ColorsLight.white,
                       lastRadius: 20,
                       threeRadius: 20,
-                      textColor: ColorsLight.pinkDark,
+                      textColor:  context.color.bluePinkDark,
                       text: 'Add a Notification',
                       width: MediaQuery.of(context).size.width,
                       height: 50.h,

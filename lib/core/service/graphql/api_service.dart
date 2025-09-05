@@ -9,6 +9,7 @@ import 'package:life_drop/features/auth/data/models/sign_up_response.dart';
 import 'package:life_drop/features/auth/data/models/user_role_response.dart';
 
 import 'package:retrofit/http.dart';
+import 'package:retrofit/error_logger.dart';
 
 part 'api_service.g.dart';
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:life_drop/core/common/loading/empty_screen.dart';
+import 'package:life_drop/core/extensions/context_extension.dart';
 import 'package:life_drop/features/admin/add_donors/presentation/bloc/get_all_donor/get_all_donor_bloc.dart';
 import 'package:life_drop/features/admin/add_donors/presentation/widgets/add_donor_item.dart';
 import 'package:life_drop/features/admin/add_donors/presentation/widgets/create/create_donor.dart';
@@ -31,9 +32,9 @@ class AddDonorBody extends StatelessWidget {
                builder: (context, state) {
                  return state.when(
                    loading: () {
-                     return const Center(
+                     return Center(
                        child: CircularProgressIndicator(
-                         color: Colors.black,
+                         color:  context.color.textColor,
                        ),
                      );
                    },

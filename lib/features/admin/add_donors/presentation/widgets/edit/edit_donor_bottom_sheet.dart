@@ -268,7 +268,7 @@ class _EditDonorBottomSheetState extends State<EditDonorBottomSheet> {
                       backgroundColor: ColorsLight.white,
                       lastRadius: 20,
                       threeRadius: 20,
-                      textColor: ColorsLight.pinkDark,
+                      textColor: context.color.bluePinkDark,
                       text: 'Edit a Donor',
                       width: MediaQuery.of(context).size.width,
                       height: 50.h,

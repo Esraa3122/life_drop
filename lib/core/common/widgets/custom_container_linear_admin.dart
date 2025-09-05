@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:life_drop/core/extensions/context_extension.dart';
 
 import 'package:life_drop/core/style/colors/colors_light.dart';
 
@@ -23,15 +24,15 @@ class CustomContainerLinearAdmin extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         gradient: LinearGradient(
           colors: [
-            ColorsLight.pinkLight.withOpacity(0.8),
-            ColorsLight.pinkDark.withOpacity(0.8),
+           context.color.containerLinear2!.withOpacity(0.8),
+            context.color.containerLinear1!.withOpacity(0.8),
           ],
           begin: const Alignment(0.36, 0.27),
           end: const Alignment(0.58, 0.85),
         ),
         boxShadow: [
           BoxShadow(
-            color: ColorsLight.pinkDark.withOpacity(0.3),
+            color:  context.color.containerLinear1!.withOpacity(0.3),
             offset: const Offset(0, 4),
             blurRadius: 8,
           ),

@@ -10,6 +10,7 @@ class NotificationModel {
       required this.body,
       required this.createdAt,
       required this.isSeen,
+      this.isRead = false,
       required this.donorId});
 
   @JsonKey(name: 'notification_id')
@@ -24,11 +25,13 @@ class NotificationModel {
 
   final bool isSeen;
 
+  final bool isRead;
+
   @JsonKey(name: 'donor_id')
   final int donorId;
 
   factory NotificationModel.fromJson(Map<String, dynamic> json) =>
-    _$NotificationModelFromJson(json);
+      _$NotificationModelFromJson(json);
 
   Map<String, dynamic> toJson() => _$NotificationModelToJson(this);
 }

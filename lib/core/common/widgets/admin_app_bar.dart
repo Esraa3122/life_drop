@@ -27,16 +27,16 @@ class AdminAppBar extends StatelessWidget implements PreferredSizeWidget {
             fontSize: 18.sp,
             fontFamily: FontFamilyHelper.poppinsEnglish,
             fontWeight: FontWeight.bold,
-            color: Colors.black),
+            color: context.color.textColor),
       ),
       leading: isMain
           ? IconButton(
               onPressed: () {
                 ZoomDrawer.of(context)!.toggle();
               },
-              icon: const Icon(
+              icon: Icon(
                 Icons.menu,
-                color: Colors.black,
+                color: context.color.textColor,
               ),
             )
           : const SizedBox.shrink(),

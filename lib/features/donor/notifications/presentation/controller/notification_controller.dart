@@ -21,4 +21,18 @@ class NotificationController {
       }).toList();
     });
   }
+
+  // Mark all notifications as seen
+  Future<void> markAllAsSeen() async {
+    final userId = SharedPref().getInt(PrefKeys.userId).toString();
+    final notificationsRef = FirebaseFirestore.instance
+        .collection(usersCollection)
+        .doc(userId)
+        .collection(notificationCollection);
+
+    final snapshot = await notificationsRef.where('isSeen', isEqualTo: false).get();
+    for (final doc in snapshot.docs) {
+      await doc.reference.update({'isSeen': true});
+    }
+  }
 }

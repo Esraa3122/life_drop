@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:life_drop/core/common/widgets/admin_app_bar.dart';
 import 'package:life_drop/core/di/injection_container.dart';
-import 'package:life_drop/core/style/colors/colors_light.dart';
+import 'package:life_drop/core/extensions/context_extension.dart';
 // import 'package:life_drop/features/admin/dashboard/presentation/bloc/categories_number/categories_number_bloc.dart';
 
 import 'package:life_drop/features/admin/dashboard/presentation/bloc/users_number/users_number_bloc.dart';
@@ -25,12 +25,12 @@ class DashBoardScreen extends StatelessWidget {
             ..add(const UsersNumberEvent.getUsersNumber()),
         ),
       ],
-      child: const Scaffold(
-          backgroundColor: ColorsLight.mainColor,
+      child: Scaffold(
+          backgroundColor: context.color.mainColor,
           appBar: AdminAppBar(
             title: 'DashBoard',
             isMain: true,
-            backgroundColor: ColorsLight.mainColor,
+            backgroundColor: context.color.mainColor!,
           ),
           body: DashBoardBody()),
     );

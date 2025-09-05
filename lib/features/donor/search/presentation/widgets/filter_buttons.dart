@@ -20,16 +20,17 @@ class FilterButtons extends StatefulWidget {
 class _FilterButtonsState extends State<FilterButtons> {
   FilterButtonsEnum searchEnum = FilterButtonsEnum.non;
   final fromKey = GlobalKey<FormState>();
-  final TextEditingController cityController = new TextEditingController();
-  final TextEditingController govController = new TextEditingController();
-  final TextEditingController bloodController = new TextEditingController();
-  final TextEditingController conditionController = new TextEditingController();
+  final TextEditingController cityController = TextEditingController();
+  final TextEditingController govController = TextEditingController();
+  final TextEditingController bloodController = TextEditingController();
+  final TextEditingController conditionController = TextEditingController();
 
   @override
   void dispose() {
     cityController.dispose();
     govController.dispose();
     bloodController.dispose();
+    conditionController.dispose();
     super.dispose();
   }
 
@@ -56,53 +57,59 @@ class _FilterButtonsState extends State<FilterButtons> {
                 child: SearchCityButton(
                   title: 'Search blood',
                   isSelected: searchEnum == FilterButtonsEnum.governorate,
-                  onTap: () {
-                    governorateSearchTap();
-                  },
+                  onTap: governorateSearchTap,
                 ),
               )
             ],
           ),
-          SizedBox(
-            height: 15.h,
-          ),
+          SizedBox(height: 15.h),
+
+          /// Search by City
           if (searchEnum == FilterButtonsEnum.city) ...[
-            //Search Text Field Name
+            CustomFadeInDown(
+              duration: 200,
+              child: CustomTextField(
+                controller: cityController,
+                hintText: 'Search for City',
+                validator: (value) => (value == null || value.isEmpty)
+                    ? 'City is required'
+                    : null,
+              ),
+            ),
+            SizedBox(
+              height: 20.h,
+            ),
             CustomFadeInDown(
               duration: 200,
               child: CustomTextField(
                 controller: bloodController,
                 hintText: 'Search for Blood Types',
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    return 'Search Name Cant be Empty';
-                  }
-                  return null;
-                },
+                validator: (value) => (value == null || value.isEmpty)
+                    ? 'Blood Types is required'
+                    : null,
               ),
             ),
             SaveFilterButton(
               onTap: () {
                 if (fromKey.currentState!.validate()) {
-                  //call
-                  context.read()<SearchBloc>().add(
+                  context.read<SearchBloc>().add(
                         SearchEvent.searchForDonor(
                           searchModel: SearchModel(
-                            Governorate: null.toString(),
+                            Governorate: "",
                             City: cityController.text.trim(),
                             Condition: conditionController.text.trim(),
                             BloodType: bloodController.text.trim(),
                           ),
                         ),
                       );
-                  setState(() {
-                    searchEnum = FilterButtonsEnum.saved;
-                  });
+                  setState(() => searchEnum = FilterButtonsEnum.saved);
                 }
               },
             ),
-          ] else if (searchEnum == FilterButtonsEnum.governorate) ...[
-            // Search Price
+          ]
+
+          /// Search by Governorate + Blood
+          else if (searchEnum == FilterButtonsEnum.governorate) ...[
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -113,12 +120,9 @@ class _FilterButtonsState extends State<FilterButtons> {
                     child: CustomTextField(
                       controller: govController,
                       hintText: 'Gov',
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Gov Empty';
-                        }
-                        return null;
-                      },
+                      validator: (value) => (value == null || value.isEmpty)
+                          ? 'Gov is required'
+                          : null,
                     ),
                   ),
                 ),
@@ -129,12 +133,9 @@ class _FilterButtonsState extends State<FilterButtons> {
                     child: CustomTextField(
                       controller: bloodController,
                       hintText: 'Blood Types',
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Blood Types Empty';
-                        }
-                        return null;
-                      },
+                      validator: (value) => (value == null || value.isEmpty)
+                          ? 'Blood Types is required'
+                          : null,
                     ),
                   ),
                 ),
@@ -143,56 +144,44 @@ class _FilterButtonsState extends State<FilterButtons> {
             SaveFilterButton(
               onTap: () {
                 if (fromKey.currentState!.validate()) {
-                  //call
-                  context.read()<SearchBloc>().add(
+                  context.read<SearchBloc>().add(
                         SearchEvent.searchForDonor(
                           searchModel: SearchModel(
                             Governorate: govController.text.trim(),
-                            City: null.toString(),
+                            City: cityController.text.trim(),
                             Condition: conditionController.text.trim(),
                             BloodType: bloodController.text.trim(),
                           ),
                         ),
                       );
-                      setState(() {
-                        searchEnum = FilterButtonsEnum.saved;
-                      });
+                  setState(() => searchEnum = FilterButtonsEnum.saved);
                 }
               },
             ),
           ],
-          if (searchEnum == FilterButtonsEnum.saved) ...[
-            SizedBox(
-              height: 100.h,
-            ),
+
+          if (searchEnum == FilterButtonsEnum.non) ...[
+            SizedBox(height: 100.h),
             const SearchForDataIcon(),
-          ]
+          ],
         ],
       ),
     );
   }
 
   void governorateSearchTap() {
-    if (searchEnum == FilterButtonsEnum.governorate) {
-      setState(() {
-        searchEnum = FilterButtonsEnum.saved;
-      });
-    } else {
-      setState(() {
-        searchEnum = FilterButtonsEnum.governorate;
-      });
-    }
+    setState(() {
+      searchEnum = searchEnum == FilterButtonsEnum.governorate
+          ? FilterButtonsEnum.saved
+          : FilterButtonsEnum.governorate;
+    });
   }
 
   void nameSearchTap() {
-    if (searchEnum == FilterButtonsEnum.city) {
-      setState(() {
-        searchEnum = FilterButtonsEnum.saved;
-      });
-    } else {
-      setState(() {
-        searchEnum = FilterButtonsEnum.city;
-      });
-    }
+    setState(() {
+      searchEnum = searchEnum == FilterButtonsEnum.city
+          ? FilterButtonsEnum.saved
+          : FilterButtonsEnum.city;
+    });
   }
 }

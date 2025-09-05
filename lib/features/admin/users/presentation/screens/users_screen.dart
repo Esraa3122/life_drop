@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:life_drop/core/common/widgets/admin_app_bar.dart';
 import 'package:life_drop/core/di/injection_container.dart';
-
-import 'package:life_drop/core/style/colors/colors_light.dart';
+import 'package:life_drop/core/extensions/context_extension.dart';
 import 'package:life_drop/features/admin/users/presentation/bloc/delete_user/delete_user_bloc.dart';
 import 'package:life_drop/features/admin/users/presentation/bloc/get_all_users/get_all_users_bloc.dart';
 import 'package:life_drop/features/admin/users/presentation/refactors/users_body.dart';
@@ -20,12 +19,12 @@ class UsersScreen extends StatelessWidget {
           ..add(GetAllUsersEvent.getAllUsers(isNotLoading: true),),),
         BlocProvider(create: (context) => sl<DeleteUserBloc>()),
       ],
-      child: const Scaffold(
-        backgroundColor: ColorsLight.mainColor,
+      child: Scaffold(
+        backgroundColor: context.color.mainColor,
         appBar: AdminAppBar(
           title: 'Users',
           isMain: true,
-          backgroundColor: ColorsLight.mainColor,
+          backgroundColor:  context.color.mainColor!,
         ),
         body:UsersBody(),
       ),
